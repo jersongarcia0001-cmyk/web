@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNAH - Universidad Nacional Autónoma de Honduras</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background: #003366; /* Azul oscuro */
+            color: #FFD700; /* Amarillo dorado */
+            padding: 20px;
+            text-align: center;
+        }
+
+        header img {
+            width: 120px; /* <-- Aquí cambias el tamaño del logo */
+            display: block;
+            margin: 10px auto;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 1.8em;
+        }
+
+        header p {
+            margin: 5px 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background: #002244; /* Azul más fuerte */
+        }
+
+        nav a {
+            color: #ffffff;
+            padding: 14px 20px;
+            text-decoration: none;
+            display: block;
+            transition: background 0.3s;
+        }
+
+        nav a:hover {
+            background: #FFD700;
+            color: #002244;
+        }
+
+        .banner {
+            text-align: center;
+            padding: 40px 20px;
+            color: #002244;
+            background: #e6e6e6;
+        }
+
+        .banner h2 {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        .content {
+            padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .card {
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 6px solid #FFD700; /* Línea dorada */
+            box-shadow: 0px 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+        }
+
+        .card:hover {
+            transform: scale(1.03);
+        }
+
+        .card h3 {
+            margin-top: 0;
+            color: #003366;
+        }
+
+        footer {
+            background: #003366;
+            color: #FFD700;
+            text-align: center;
+            padding: 15px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Universidad Nacional Autónoma de Honduras</h1>
+        <p>“Lucem Aspicio”</p>
+        <p><strong>Bienvenidos a la UNAH</strong></p>
+        <p>Formando líderes para Honduras y el mundo</p>
+    </header>
+
+    <nav>
+        <a href="index.html">Inicio</a>
+        <a href="carreras.html">Carreras</a>
+        <a href="noticias.html">Noticias</a>
+        <a href="contacto.html">Contacto</a>
+        <a href="sivot.html">Votaciones</a>
+    </nav>
+
+    <!-- 🔹 Logo debajo del menú -->
+    <section style="text-align: center; padding: 15px; background: #f4f4f4;">
+        <img src="logo uni.png" alt="Logo UNAH">
+    </section>
+
+    <section class="banner">
+        <h2>Sobre la UNAH</h2>
+        <p>
+            La Universidad Nacional Autónoma de Honduras (UNAH) es la institución de educación superior 
+            más grande e importante del país. Con una tradición de excelencia académica, se dedica a la 
+            formación de profesionales comprometidos con el desarrollo social, científico y cultural de Honduras.
+        </p>
+        <p>
+            Su misión es contribuir a la construcción de una sociedad más justa y equitativa, 
+            mediante la enseñanza de calidad, la investigación y la vinculación con la comunidad.
+        </p>
+    </section>
+
+    <section class="content">
+        <div class="card">
+            <h3>Últimas Noticias</h3>
+            <p>📢 Inscripciones abiertas para el período 2025.</p>
+            <p>🎓 Convocatoria a becas estudiantiles.</p>
+        </div>
+
+        <div class="card">
+            <h3>Próximos Eventos</h3>
+            <p>📅 Congreso universitario: 15 de septiembre.</p>
+            <p>📅 Elecciones estudiantiles: 30 de octubre.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 UNAH - Todos los derechos reservados.</p>
+        <p>Contacto: info@unah.edu.hn | Tel: (504) 2216-0000</p>
+    </footer>
+
+</body>
+</html>

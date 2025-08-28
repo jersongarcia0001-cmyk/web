@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noticias - UNAH</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background: #003366;
+            color: #FFD700;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 1.8em;
+        }
+
+        header p {
+            margin: 5px 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background: #002244;
+        }
+
+        nav a {
+            color: #ffffff;
+            padding: 14px 20px;
+            text-decoration: none;
+            display: block;
+            transition: background 0.3s;
+        }
+
+        nav a:hover {
+            background: #FFD700;
+            color: #002244;
+        }
+
+        .banner {
+            text-align: center;
+            padding: 40px 20px;
+            color: #002244;
+            background: #e6e6e6;
+        }
+
+        .banner h2 {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        .content {
+            padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .card {
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 6px solid #FFD700;
+            box-shadow: 0px 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+        }
+
+        .card:hover {
+            transform: scale(1.03);
+        }
+
+        .card h3 {
+            margin-top: 0;
+            color: #003366;
+        }
+
+        footer {
+            background: #003366;
+            color: #FFD700;
+            text-align: center;
+            padding: 15px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Noticias UNAH</h1>
+        <p>“Lucem Aspicio”</p>
+    </header>
+
+    <nav>
+        <a href="index.html">Inicio</a>
+        <a href="carreras.html">Carreras</a>
+        <a href="noticias.html">Noticias</a>
+        <a href="contacto.html">Contacto</a>
+        <a href="sivot.html">Votaciones</a>
+    </nav>
+
+    <section class="banner">
+        <h2>Últimas Noticias</h2>
+        <p>Entérate de los eventos y comunicados más recientes de la UNAH.</p>
+    </section>
+
+    <section class="content">
+        <div class="card">
+            <h3>📢 Inicio de clases 2025</h3>
+            <p>El nuevo período académico dará inicio el 12 de febrero.</p>
+        </div>
+
+        <div class="card">
+            <h3>🎓 Becas disponibles</h3>
+            <p>Se abre la convocatoria para becas nacionales e internacionales.</p>
+        </div>
+
+        <div class="card">
+            <h3>🏛️ Renovación de infraestructura</h3>
+            <p>La UNAH invierte en nuevas aulas y laboratorios modernos.</p>
+        </div>
+
+        <div class="card">
+            <h3>🌎 Proyectos internacionales</h3>
+            <p>Convenios con universidades de Europa y Latinoamérica.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 UNAH - Todos los derechos reservados.</p>
+        <p>Contacto: info@unah.edu.hn | Tel: (504) 2216-0000</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SiVot - Login</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: url("https://media.istockphoto.com/id/1493434989/es/foto/150-personalidades-individuales-collage.jpg?s=612x612&w=0&k=20&c=-46qWQqi_nUDKGHynxCvsSfKsjNLyuzyIzaN3_XxolI=") no-repeat center center/cover;
+      position: relative;
+    }
+
+    /* 🔹 Capa azul transparente */
+    body::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 51, 102, 0.7);
+      z-index: 0;
+    }
+
+    .container {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1;
+      max-width: 1000px;
+      width: 90%;
+      gap: 30px;
+    }
+
+    .login-box {
+      background: #fff;
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+      flex: 1;
+      max-width: 400px;
+      text-align: center;
+    }
+
+    .login-box img {
+      width: 100px; /* <- cambia el tamaño del logo aquí si quieres */
+      margin-bottom: 15px;
+    }
+
+    .login-box h2 {
+      margin-bottom: 20px;
+      color: #003366;
+    }
+
+    .login-box input {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1em;
+    }
+
+    .btn {
+      width: 100%;
+      padding: 12px;
+      background: #003366;
+      color: #FFD700;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 1em;
+      margin-top: 10px;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background: #FFD700;
+      color: #003366;
+    }
+
+    .btn-back {
+      width: 100%;
+      padding: 12px;
+      background: #ccc;
+      color: #000;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 1em;
+      margin-top: 10px;
+      transition: background 0.3s;
+    }
+
+    .btn-back:hover {
+      background: #999;
+      color: #fff;
+    }
+
+    .video-box {
+      flex: 1;
+      max-width: 500px;
+    }
+
+    .video-box iframe {
+      width: 100%;
+      height: 300px;
+      border-radius: 10px;
+      border: none;
+    }
+
+    footer {
+      position: absolute;
+      bottom: 10px;
+      text-align: center;
+      color: #fff;
+      font-size: 0.9em;
+    }
+
+    .hint {
+      font-size: 0.85em;
+      color: #666;
+      margin-top: -6px;
+      margin-bottom: 8px;
+      text-align: left;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- Formulario -->
+    <div class="login-box">
+      <img src="images.png" alt="Logo SiVot"> <!-- 🔹 Logo del sistema -->
+      <h2>Iniciar Sesión</h2>
+
+      <!-- 🔸 Envío al backend del OTP -->
+      <form action="send_email.php" method="POST" id="form-login">
+        <input type="text" name="usuario" placeholder="Número de identificación" required>
+        <input type="password" name="password" placeholder="Contraseña" required>
+
+        <!-- 🔒 Solo correos @unah.edu.hn -->
+        <input
+          type="email"
+          name="email"
+          placeholder="Correo institucional (ej: usuario@unah.edu.hn)"
+          required
+          pattern="^[a-zA-Z0-9._%+-]+@unah\.edu\.hn$"
+          title="Usa tu correo institucional @unah.edu.hn"
+        >
+        <div class="hint">Solo se acepta correo institucional @unah.edu.hn</div>
+
+        <button type="submit" class="btn">Ingresar</button>
+      </form>
+
+      <!-- Botón Regresar -->
+      <form action="https://www.unah.edu.hn" method="get">
+        <button type="submit" class="btn-back">Regresar a UNAH</button>
+      </form>
+    </div>
+
+    <!-- Video instructivo -->
+    <div class="video-box">
+      <iframe src="https://www.youtube.com/embed/QzEoNzc_T1Y?si=YPYKxoNbxY_UuT-X"
+              title="Instructivo SitVot"
+              allowfullscreen>
+      </iframe>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 UNAH - Sistema de Votaciones en Línea (SiVot)</p>
+  </footer>
+
+  <!-- ✅ Validación extra en JS para bloquear correos que no sean @unah.edu.hn -->
+  <script>
+    const form = document.getElementById('form-login');
+    form.addEventListener('submit', function(e) {
+      const email = form.elements['email'].value.trim();
+      const re = /^[a-zA-Z0-9._%+-]+@unah\.edu\.hn$/i;
+      if (!re.test(email)) {
+        e.preventDefault();
+        alert('Solo se permite correo institucional @unah.edu.hn');
+        form.elements['email'].focus();
+      }
+    });
+  </script>
+</body>
+</html>
